@@ -1,0 +1,123 @@
+/***************CASI D'USO********************/
+
+/****************UTENTE GENERICO******************/
+
+CASO D'USO : vedi tutti i films
+1] l'utente generico accede alla homepage, il sistema mostra tutte le sezioni disponibili
+2] l'utente generico sceglie la sezione film, il sistema mostra tutte le operazioni disponibili per gli utenti generici
+3] l'utente sceglie la pagina per la visualizzazione di tutti i film presenti nel sistema
+4] il sistema mostra tutti i film registrati
+
+CASO D'USO : vedi dettagli film
+1] l'utente generico [vedi i casi d'uso per la ricerca dei film] seleziona un film 
+2] il sistema mostra tutte le informazioni relative al film
+
+CASO D'USO : ricerca film per anno di uscita
+1] l'utente generico accede alla homepage, il sistema mostra tutte le sezioni disponibili
+2] l'utente generico sceglie la sezione film, il sistema mostra tutte le operazioni disponibili per gli utenti generici
+3] l'utente sceglie la pagina per la ricerca dei films in base alla data di uscita 'formSearchMoviesByYear'
+4] l'utente inserisce la data per la ricerca, il sistema mostra tutti i film usciti nella data specificata
+   4.1] l'utente ha inserito un valore non valido per la ricerca, il sistema reinderizza l'utente generico alla pagina 'formSearchMoviesByYear'
+
+CASO D'USO : vedi tutti gli attori
+1] l'utente generico accede alla homepage, il sistema mostra tutte le sezioni disponibili
+2] l'utente generico sceglie la sezione attori, il sistema mostra tutte le operazioni disponibili per gli utenti generici
+3] l'utente sceglie la pagina per la visualizzazione di tutti i gli artisti presenti nel sistema
+
+CASO D'USO : vedi dettagli artista
+1] l'utente generico [vedi i casi d'uso per la ricerca dei artista] seleziona un artista 
+2] il sistema mostra tutte le informazioni relative al sistema
+
+/**************UTENTE REGISTATO (USER)******************/
+
+CASO D'USO : cambio password
+1] l'utente registrato accede alla homepage, il sistema mostra tutte le sezioni disponibili
+2] l'utente generico sceglie la sezione 'areaPersonale, il sistema mostra tutte le operazioni disponibili'
+3] l'utente registrato sceglie la pagina per la modifica della password
+4] l'utente registrato inserisce la nuova passwork, il sistema riporta l'utente presso la pagina 'area personale' dopo aver effetuato il cambio di password
+   4.1] l'utente inserisce una password non valida, il sistema riporta l'utente presso la pagina per la modifica della password
+
+CASO D'USO : cambio username
+1] l'utente registrato accede alla homepage, il sistema mostra tutte le sezioni disponibili
+2] l'utente registrato sceglie la sezione 'areaPersonale, il sistema mostra tutte le operazioni disponibili'
+3] l'utente registrato sceglie la pagina per la modifica dello username
+4] l'utente registrato inserisce il nuovo username, il sistema riporta l'utente presso la pagina 'area personale' dopo aver effettuato il cambio dello username
+   4.1] l'utente inserisce uno username già usata da altri utenti, il sistema riporta l'utente presso la pagina per la modifica della password
+
+CASO D'USO : cambio email
+1] l'utente registrato accede alla homepage, il sistema mostra tutte le sezioni disponibili
+2] l'utente registrato sceglie la sezione 'areaPersonale, il sistema mostra tutte le operazioni disponibili'
+3] l'utente registrato sceglie la pagina per la modifica della email
+4] l'utente registrato inserisce il nuova email, il sistema riporta l'utente presso la pagina 'area personale' dopo aver effettuato il cambio della email
+   4.1] l'utente inserisce una email già usata da altri utenti, il sistema riporta l'utente presso la pagina per la modifica della email
+
+CASO D'USO : inserisci recensione
+1] l'utente registrato seleziona un film (vedere i casi d'uso precendeti per i dettagli sulla ricerca dei film)
+2] il sistema mostra il film
+3] l'utente selezione la voce 'aggiungi una recensione'
+   3a] l'utente ha già inserito una recensione per il film in questione
+       1] viene riportato alla pagina del film selezionato
+   3b] l'utente viene portato alla pagina per inserire una recensione
+       1]l'utente inserisce il titolo, un voto compreso tra 1 e 5 e il testo della recensione e conferma l'inserimento
+         1a] l'utente ha dimenticato una delle voci da riempire
+             1]il sistema lo riporta alla pagina per l'inserimento della recensione
+       2]il sistema registra la nuova recensione e riporta l'utente presso la pagina contenente le informazioni del film
+
+/**************UTENTE REGISTRATO (ADMIN) ************************/
+
+CASO D'USO : inserisci film
+1] l'admin accede alla pagina 'sezione film', il sistema mostra tutte le operazioni disponibili
+2] l'admin sceglie l'operazione 'inserisci film', il sistema porta l'admin alla pagina per l'inserimento
+3] l'admin inserisce il titolo e anno di uscita del film e conferma l'inserimento
+   3a] il film che si cerca di inserire è già presente nel sistema
+       1] il sistema riporta l'utente nella pagina per l'inserimento
+4] il sistema registra il film e porta l'admin alla pagina contenente tutti i dettagli del film
+
+CASO D'USO : inserisci artista
+1] l'admin accede alla pagina 'sezione artisti', il sistema mostra tutte le operazioni disponibili
+2] l'admin sceglie l'operazione 'inserisci artista', il sistema porta l'admin alla pagina per l'inserimento
+3] l'admin inserisce il nome, cognome, data di nascita e (opzionale) anche l'anno di morte dell'artita e conferma l'inserimento
+   3a] il l'artista che si cerca di inserire è già presente nel sistema
+       1] il sistema riporta l'utente nella pagina per l'inserimento
+4] il sistema registra l'artista e porta l'admin alla pagina contenente tutti i dettagli dell'artista
+
+CASO D'USO : rimuovi film
+1] l'admin accede alla 'sezione film', il sistema mostra tutte le operazioni disponibili
+2] l'admin sceglie la voce 'gestisci film', il sistema mostra tutti i film presenti sul sistema
+3] l'admin sceglie in film, il sistema mostra tutte le opzioni di gestione per il film scelto
+4] l'admin sceglie la voce 'elimina', il sistema porta l'admin alla pagina per confermare la scelta di eliminazione
+    4a] l'admin conferma l'eliminazione
+        1] il sistema elimina il film dal sistema (assieme a tutte le sue recensioni e le sue informazioni da tutti gli artisti), riporta l'admim alla pagina di 
+           gestione dei film
+    4b] l'admin annulla la conferma di eliminazione
+        1] il sistema non fa nulla e riporta l'admin alla pagina di gestione del film scelto
+
+CASO D'USO : rimuovi artista
+1] l'admin accede alla 'sezione artisti', il sistema mostra tutte le operazioni disponibili
+2] l'admin sceglie la voce 'gestisci artisti', il sistema mostra tutti i film presenti sul sistema
+3] l'admin sceglie in film, il sistema mostra tutte le opzioni di gestione per l'artista scelto
+4] l'admin sceglie la voce 'elimina', il sistema porta l'admin alla pagina per confermare la scelta di eliminazione
+    4a] l'admin conferma l'eliminazione
+        1] il sistema elimina l'artista dal sistema (assieme a tutte e le sue informazioni da tutti i films), riporta l'admim alla pagina di 
+           gestione degli artisti
+    4b] l'admin annulla la conferma di eliminazione
+        1] il sistema non fa nulla e riporta l'admin alla pagina di gestione dell'artista scelto
+
+CASO D'USO : rimuovi recensione da un film
+1] l'admin accede alla 'sezione artisti', il sistema mostra tutte le operazioni disponibili
+2] l'admin sceglie la voce 'gestisci artisti', il sistema mostra tutti i film presenti sul sistema
+3] l'admin sceglie in film, il sistema mostra tutte le opzioni di gestione per l'artista scelto
+4] l'admin sceglie la voce 'elimina recensioni', il sistema porta l'admin alla pagina con tutte le recensioni del film
+5] l'admin sceglie una recensione da eliminare, il sistema porta l'admin alla pagina per confermare la scelta di eliminazione
+    4a] l'admin conferma l'eliminazione
+        1] il sistema elimina la recensione dal sistema e porta l'admin alla pagina con tutte le recensioni 
+    4b] l'admin annulla la conferma di eliminazione
+        1] il sistema non fa nulla e riporta l'admin alla pagina con tutte le recensioni
+
+CASO D'USO : rimuovi regista da film
+
+CASO D'USO : aggiungi regista ad un film
+
+CASO D'USO : rimuovi attore da un film
+
+CASO D'USO : aggiungi attore ad un film
